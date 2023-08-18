@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { signOut, useSession } from "next-auth/react";
+import { api } from "~/utils/api";
 
 export default function App() {
   const { data: session } = useSession();
@@ -22,18 +23,20 @@ export default function App() {
           </p>
         </div>
         <main className="pt-8">
-          <div>
-            <p>
-              <span className="text-gray-400">Usuário logado como </span>
-              <span className="text-rose-400">🧠{session?.user.name}</span>
-            </p>
-            <button
-              onClick={() => void signOut()}
-              className="pt-8 text-red-500"
-            >
-              Sair
-            </button>
-          </div>
+          {session && (
+            <div>
+              {/* <p>
+                <span className="text-gray-400">Usuário logado como </span>
+                <span className="text-rose-400">🧠{session.user.username}</span>
+              </p> */}
+              <button
+                onClick={() => void signOut()}
+                className="pt-8 text-red-500"
+              >
+                Sair
+              </button>
+            </div>
+          )}
         </main>
       </div>
     </>

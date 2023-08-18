@@ -32,7 +32,7 @@ export default function BemVindo() {
             <div>
               <p>
                 <span className="text-gray-400">Usuário logado como </span>
-                <span className="text-rose-400">🧠{session?.user.name}</span>
+                <span className="text-rose-400">🧠{session.user.name}</span>
               </p>
               <button
                 onClick={() => void signOut()}

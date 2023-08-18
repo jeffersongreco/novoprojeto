@@ -21,7 +21,9 @@ export default function Entrar() {
         </div>
         <main className="pt-8">
           <button
-            onClick={() => void signIn("google", { callbackUrl: `/app` })}
+            onClick={() =>
+              void signIn("google", { callbackUrl: `/onboarding` })
+            }
             className="text-cyan-400"
           >
             Continuar com Google
