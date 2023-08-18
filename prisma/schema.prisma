@@ -8,3 +8,8 @@ datasource db {
     directUrl         = env("DATABASE_URL_NON_POOLING")
     shadowDatabaseUrl = env("DATABASE_URL_NON_POOLING")
 }
+
+model Example {
+    id          Int     @id @default(autoincrement())
+    description String?
+}
