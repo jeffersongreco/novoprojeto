@@ -1,10 +1,15 @@
-import { SignOutButton, useUser } from "@clerk/nextjs";
+import { SignOutButton, useUser } from '@clerk/nextjs'
 
 export default function App() {
-  const { user } = useUser();
+  const { user } = useUser()
 
   return (
-    <div className="absolute inset-0 flex flex-col justify-start gap-8 bg-slate-950 p-8 font-mono font-medium">
+    <div
+      className="
+      absolute inset-0 flex flex-col justify-start gap-8 bg-slate-950 p-8
+      font-mono font-medium
+      "
+    >
       <div className="flex gap-8">
         <p className="text-gray-200">🐇 Novo projeto</p>
         <p>
@@ -28,5 +33,5 @@ export default function App() {
         )}
       </main>
     </div>
-  );
+  )
 }

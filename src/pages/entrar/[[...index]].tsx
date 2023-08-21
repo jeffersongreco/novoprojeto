@@ -1,4 +1,4 @@
-import { SignIn } from "@clerk/nextjs";
+import { SignIn } from '@clerk/nextjs'
 
 export default function Entrar() {
   return (
@@ -16,5 +16,5 @@ export default function Entrar() {
         <SignIn />
       </main>
     </div>
-  );
+  )
 }

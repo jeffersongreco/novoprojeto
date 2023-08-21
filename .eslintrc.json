@@ -1,0 +1,45 @@
+{
+    "extends": [
+        "next/core-web-vitals",
+        "google"
+    ],
+    "rules": {
+        "indent": "off",
+        "require-jsdoc": "off",
+        "operator-linebreak": "off",
+        "semi": [
+            "error",
+            "never"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "import/no-extraneous-dependencies": "off",
+        "import/extensions": "off",
+        "import/order": "error",
+        "no-param-reassign": "off",
+        "no-var": "off",
+        "max-len": [
+            "error",
+            {
+                "code": 100,
+                "comments": 60
+            }
+        ],
+        "multiline-comment-style": [
+            "error",
+            "separate-lines"
+        ],
+        "line-comment-position": [
+            "error",
+            {
+                "position": "above"
+            }
+        ],
+        "object-curly-spacing": [
+            "error",
+            "always"
+        ]
+    }
+}

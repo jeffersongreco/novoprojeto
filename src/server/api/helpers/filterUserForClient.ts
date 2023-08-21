@@ -1,4 +1,4 @@
-import { User } from "@clerk/nextjs/dist/types/server";
+import { User } from '@clerk/nextjs/dist/types/server'
 
 export const filterUserForClient = (user: User) => {
   return {
@@ -6,5 +6,5 @@ export const filterUserForClient = (user: User) => {
     username: user.username,
     firstName: user.firstName,
     imageUrl: user.imageUrl,
-  };
-};
+  }
+}
