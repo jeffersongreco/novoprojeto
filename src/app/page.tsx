@@ -1,8 +1,9 @@
-import { SignOutButton, useUser } from '@clerk/nextjs'
 import Link from 'next/link'
+import { getSession } from '@/lib/auth'
+import SignOutButton from '@/components/auth/sign-out-button'
 
-export default function BemVindo() {
-  const { user } = useUser()
+export default async function BemVindo() {
+  const session = await getSession()
 
   return (
     <>
@@ -22,20 +23,18 @@ export default function BemVindo() {
           </p>
         </div>
         <main className="pt-8">
-          {!user && (
+          {!session?.user && (
             <Link href="/entrar" className="text-cyan-500">
               <p>Entrar</p>
             </Link>
           )}
-          {user && (
+          {session?.user && (
             <div>
               <p>
                 <span className="text-gray-400">Usuário logado como </span>
-                <span className="text-rose-400">🧠{user.firstName}</span>
+                <span className="text-rose-400">🧠{session.user.name}</span>
               </p>
-              <SignOutButton>
-                <button className="pt-8 text-red-500">Sair</button>
-              </SignOutButton>
+              <SignOutButton />
             </div>
           )}
         </main>

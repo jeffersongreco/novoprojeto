@@ -1,4 +1,4 @@
-import { SignIn } from '@clerk/nextjs'
+import SignInButton from '@/components/auth/sign-in-button'
 
 export default function Entrar() {
   return (
@@ -13,7 +13,7 @@ export default function Entrar() {
         </p>
       </div>
       <main className="pt-8">
-        <SignIn />
+        <SignInButton />
       </main>
     </div>
   )

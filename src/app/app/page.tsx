@@ -1,7 +1,12 @@
-import { SignOutButton, useUser } from '@clerk/nextjs'
+import { redirect } from 'next/navigation'
+import { getSession } from '@/lib/auth'
+import SignOutButton from '@/components/auth/sign-out-button'
 
-export default function App() {
-  const { user } = useUser()
+export default async function App() {
+  const session = await getSession()
+  if (!session?.user) {
+    redirect('/entrar')
+  }
 
   return (
     <div
@@ -20,17 +25,13 @@ export default function App() {
         </p>
       </div>
       <main className="pt-8">
-        {user && (
-          <div>
-            <p>
-              <span className="text-gray-400">Usuário logado como </span>
-              <span className="text-rose-400">🧠{user.firstName}</span>
-            </p>
-            <SignOutButton>
-              <button className="pt-8 text-red-500">Sair</button>
-            </SignOutButton>
-          </div>
-        )}
+        <div>
+          <p>
+            <span className="text-gray-400">Usuário logado como </span>
+            <span className="text-rose-400">🧠{session.user.name}</span>
+          </p>
+          <SignOutButton />
+        </div>
       </main>
     </div>
   )
