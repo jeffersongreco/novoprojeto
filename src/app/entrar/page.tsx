@@ -1,4 +1,7 @@
-import SignInButton from '@/components/auth/sign-in-button'
+import {
+  SignInButtonGithub,
+  SignInButtonGoogle,
+} from '@/components/auth/sign-in-button'
 
 export default function Entrar() {
   return (
@@ -13,7 +16,10 @@ export default function Entrar() {
         </p>
       </div>
       <main className="pt-8">
-        <SignInButton />
+        <div className="flex gap-8">
+          <SignInButtonGoogle />
+          <SignInButtonGithub />
+        </div>
       </main>
     </div>
   )
